@@ -4,14 +4,16 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { headerData } from "./fakeData";
 import SingleMenuElement from "./SingleMenuElement";
+import PrimaryButton from "../PrimaryButton";
+import SecondaryButton from "../SecondaryButton";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
 
   return (
-    <div className="flex items-center justify-between border-b border-gray-400 py-8 px-32 lg:px-64">
+    <header className="flex items-center justify-between border-b border-gray-400 py-[8px] px-[32px] lg:px-[64px]">
       <Link href="/">
-        <Image src="/images/Estate.png" alt="logo" width={15} height={15} />
+        <Image src="/images/Logotype.png" alt="logo" width={160} height={32} />
       </Link>
       <nav>
         <section className="MOBILE-MENU flex lg:hidden">
@@ -46,14 +48,38 @@ function Header() {
               {headerData.map((el, index) => (
                 <SingleMenuElement key={index} url={el.url} text={el.text} />
               ))}
+              <li className="w-[311px]">
+                <SecondaryButton
+                  onClickFunction={() => console.log("secondary button")}
+                  text="Login"
+                />
+              </li>
+              <li className="w-[311px]">
+                <PrimaryButton
+                  onClickFunction={() => console.log("primary button")}
+                  text="Sign up"
+                />
+              </li>
             </ul>
           </div>
         </section>
 
-        <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
+        <ul className="DESKTOP-MENU hidden space-x-8 lg:flex justify-center">
           {headerData.map((el, index) => (
             <SingleMenuElement key={index} url={el.url} text={el.text} />
           ))}
+          <li className="w-[119px] self-center">
+            <SecondaryButton
+              onClickFunction={() => console.log("secondary button")}
+              text="Login"
+            />
+          </li>
+          <li className="w-[119px] self-center">
+            <PrimaryButton
+              onClickFunction={() => console.log("primary button")}
+              text="Sign up"
+            />
+          </li>
         </ul>
       </nav>
       <style>{`
@@ -75,7 +101,7 @@ function Header() {
           align-items: center;
         }
       `}</style>
-    </div>
+    </header>
   );
 }
 
