@@ -2,6 +2,7 @@
 import HeartButton from "@/components/HeartIconButton";
 import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
+import Switcher from "@/components/Switcher";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           text="Secondary button"
         />
       </div>
+      <Switcher />
       <HeartButton />
     </div>
   );
