@@ -1,22 +1,40 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary-button-background-default: #6851ff;
+  --color-primary-button-background-hoverd: #8b8aff;
+  --color-primary-button-background-focus: #6851ff;
+  --color-primary-button-background-pressed: #3d1efe;
+  --color-primary-button-background-disable: #b5b8cb;
+  --color-primary-button-text: #fff;
+  --color-primary-border-color: #3118d6;
+  --radius-buttons-primary-secondary: 4px;
+
+  --color-secondary-button-background: #fff;
+  --color-secondary-button-border-default: #d6d8e5;
+  --color-secondary-button-border-hoverd: #6851ff;
+  --color-secondary-button-border-focus: #6851ff;
+  --color-secondary-button-border-pressed: #2511ae;
+  --color-secondary-button-border-disable: #d6d8e5;
+
+  --color-secondary-button-font-focus: #6851ff;
+  --color-secondary-button-font-pressed: #2511ae;
+  --color-secondary-button-font-disable: #717788;
+
+  --text-buttons-secondary-primary: 16px;
+  --text-buttons-secondary-primary--line-height: 150%;
+  --text-buttons-secondary-primary--font-weight: 700;
+
+  --color-heart-icon-focused-fill: #8b8aff;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
